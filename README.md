@@ -42,7 +42,7 @@ The vulnerabilities were identified on the network using penetration testing too
 
 In the Blue Team Log Analysis and Attack Characterisation we utilise Kibana in Elastic Stack to analyse and illustrate the attack. Kibana enables the visual analysis of data from an Elasticsearch with Logstash and Beats. Using Kibana’s interface allows us to query data in Elasticsearch indices and then visualise the results through various chart options.
 
-The Blue Team proposes mitigations Strategies to create alarms and harden the system concerning the flaws discovered.  The recommendations are not exhaustive.
+The Blue Team proposes mitigation strategies to create alarms and harden the system concerning the flaws discovered.  The recommendations are not exhaustive.
 
 ## Network Topology
 Below is the network topology of the project, inclusive of the Kali attacking machine, the ELK server, and the victim server
