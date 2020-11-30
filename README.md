@@ -113,14 +113,14 @@ Tools | Processes | Achievements
 ------|-----------|-------------
 [NMAP](https://nmap.org/) | We start with a port scan to enumerate the network command: `nmap 192.168.1.0/24` We enumerate further with NMAP to find services and versions running command: `nmap -sV -A 192.168.1.105` | Identify IP address 192.168.1.105, TCP Ports 22 and 80 open, We also uncover Apache version and Web Directory Index 
 
-![NMAP Service and Version Scan](/Images/Nmapscan.png)
+![NMAP Service and Version Scan](Red-vs-Blue/Images/Nmapscan.png)
 
 #### Sensitive Data Exposure - Exposure of Sensitive Information to an Unauthorised Actor
 Tools | Processes | Achievements
 ------|-----------|-------------
 Open HTTP Port 80 | We access the insecure Apache HTTP website 192.168.1.105 | Navigating through the directories we find information relating to the company_secret_folder
 
-![MozillaFirefox](Images/MozillaFirefox.png)
+![MozillaFirefox](Red-vs-Blue/Images/MozillaFirefox.png)
 
 #### Brute Force Attack - Inadequate Encryption Strength
 Tools | Processes | Achievements
