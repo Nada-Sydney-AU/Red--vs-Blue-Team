@@ -47,7 +47,7 @@ The Blue Team proposes mitigations Strategies to create alarms and harden the sy
 ## Network Topology
 Below is the network topology of the project, inclusive of the Kali attacking machine, the ELK server, and the victim server
 
-![Network Diagram](Images/NetworkDiagram.png)
+![Network Diagram](Red-vs-Blue/Images/NetworkDiagram.png)
 
 #### Network Red Team vs Blue Team Subnet
 
@@ -127,31 +127,31 @@ Tools | Processes | Achievements
 ------|-----------|-------------
 [Hydra](https://tools.kali.org/password-attacks/hydra) | We use the information found in the company_secret_folder and run a brute-force attack on the password protected secret folder command: `hydra -l ashton -P /usr/share/wordlists/rockyou.txt -s 80 -f -vV 192.168.1.105 http-get /company_folders/secret_folder` | Successful retrieval of User and Password 
 
-![Hydra success](Images/Hydrasuccess.png)
-![Hydra success login](Images/HydraSuccessLogin.png)
+![Hydra success](Red-vs-Blue/Images/Hydrasuccess.png)
+![Hydra success login](Red-vs-Blue/Images/HydraSuccessLogin.png)
 
 #### Unlock Folder to Compromise Server - Insecure Storage of Sensitive Information
 Tools | Processes | Achievements
 ------|-----------|-------------
 Manual access via folder | Access password-protected folder with credentials obtained, Analyse contents | Uncover instructions to access the WebDav Corporate Server and user Ryans Hash
 
-![Connect Corp Server](Images/CorpSever.png)
+![Connect Corp Server](Red-vs-Blue/Images/CorpSever.png)
 
 #### Password Crack - Weak Encoding for Password
 Tools | Processes | Achievements
 ------|-----------|-------------
 [Crackstation](https://crackstation.net/) | Copy retrieved hash into CrackStation | Successfully obtained user Ryans Hash to login into Corporate Server 
 
-![Crackstation](Images/Crackstation.png)
+![Crackstation](Red-vs-Blue/Images/Crackstation.png)
 
 #### Upload PHP to WebDav - Unrestricted Upload of File
 Tools | Processes | Achievements
 ------|-----------|-------------
 [Cadaver](http://www.webdav.org/cadaver/) |  We use cavader the CLI for webdav to login| Successful login with user Ryans credentials, Upload of PHP file
 
-![Cadaver](Images/Cadaver.png)
-![Cadaver Command](Images/CadaverCommand.png)
-![WebDav](Images/WebDav.png)
+![Cadaver](Red-vs-Blue/Images/Cadaver.png)
+![Cadaver Command](Red-vs-Blue/Images/CadaverCommand.png)
+![WebDav](Red-vs-Blue/Images/WebDav.png)
 
 #### Remote Code Execution
 Tools | Processes | Achievements
@@ -160,11 +160,11 @@ Msfvenom | Command-line instance of Metasploit we use to generate and output the
 Metasploit | Start listener and deliver payload | Performed successful reverse attack and gained shell and root access
 Command Line | Command: `find . -iname flag.txt` | Search and retrieve the Flag
 
-![Msfvenom](Images/Msfvenom.png)
+![Msfvenom](Red-vs-Blue/Images/Msfvenom.png)
 
-![Metasploit](Images/Metasploit.png)
+![Metasploit](Red-vs-Blue/Images/Metasploit.png)
 
-![Flag](Images/Flag.png)
+![Flag](Red-vs-Blue/Images/Flag.png)
 
 ## Blue Team Log Analysis and Attack Characterisation
 
@@ -172,49 +172,49 @@ Command Line | Command: `find . -iname flag.txt` | Search and retrieve the Flag
 
 *Port Scan occurred Nov 15*
 
-![Port Scan Kibana](Images/PortScanKibana.png)
+![Port Scan Kibana](Red-vs-Blue/Images/PortScanKibana.png)
 
 *143,984 Packets sent from the IP address 192.168.1.90* 
 
-![Port Scan Kibana1](Images/PortScanKibana1.png)
+![Port Scan Kibana1](Red-vs-Blue/Images/PortScanKibana1.png)
 
 ### Identifying the Port Scan
 
 *401 Victim Responses* 
 
-![Responses](Images/Responses.png)
+![Responses](Red-vs-Blue/Images/Responses.png)
 
 *NMAP Observed*
 
-![Kibana NMAP](Images/KibanaNMAP.png)
+![Kibana NMAP](Red-vs-Blue/Images/KibanaNMAP.png)
 
 ### Finding the Request for the Hidden Directory
 
 *The requests for the Hidden Directory occurred Nov 15, 15 354 requests were made*
 
-![Hidden Directory](Images/HiddenDirectory.png)
+![Hidden Directory](Red-vs-Blue/Images/HiddenDirectory.png)
 
 *Company Folders Secret Folder was requested*
 
-![Folder Request](Images/FolderRequest.png)
+![Folder Request](Red-vs-Blue/Images/FolderRequest.png)
 
 ### Uncovering the Brute Force Attack
 
 *15,451 requests were made in the attack before the password was discovered*
 
-![Brute Force Attack](Images/BruteForceAttack.png)
+![Brute Force Attack](Red-vs-Blue/Images/BruteForceAttack.png)
 
 ### Finding the WebDav Connection and Identify the Reverse Shell
 
 *We see the WebDav connection and the PUT request to upload the payload to target*
 
-![WebDav PUT Request](Images/WebDavShell.png)
+![WebDav PUT Request](Red-vs-Blue/Images/WebDavShell.png)
 
 ### Identify the Reverse Shell and Meterpreter Traffic
 
 *We filter and analyse Ports and see the reverse shell*
 
-![Port 4444](Images/Port4444.png)
+![Port 4444](Red-vs-Blue/Images/Port4444.png)
 
 ## Blue Team Proposed Alarms and Mitigation Strategies
 
