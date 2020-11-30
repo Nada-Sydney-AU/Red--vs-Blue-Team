@@ -120,38 +120,38 @@ Tools | Processes | Achievements
 ------|-----------|-------------
 Open HTTP Port 80 | We access the insecure Apache HTTP website 192.168.1.105 | Navigating through the directories we find information relating to the company_secret_folder
 
-![MozillaFirefox](/Images/MozillaFirefox.png)
+![MozillaFirefox](Images/MozillaFirefox.png)
 
 #### Brute Force Attack - Inadequate Encryption Strength
 Tools | Processes | Achievements
 ------|-----------|-------------
 [Hydra](https://tools.kali.org/password-attacks/hydra) | We use the information found in the company_secret_folder and run a brute-force attack on the password protected secret folder command: `hydra -l ashton -P /usr/share/wordlists/rockyou.txt -s 80 -f -vV 192.168.1.105 http-get /company_folders/secret_folder` | Successful retrieval of User and Password 
 
-![Hydra success](/Images/Hydrasuccess.png)
-![Hydra success login](/Images/HydraSuccessLogin.png)
+![Hydra success](Images/Hydrasuccess.png)
+![Hydra success login](Images/HydraSuccessLogin.png)
 
 #### Unlock Folder to Compromise Server - Insecure Storage of Sensitive Information
 Tools | Processes | Achievements
 ------|-----------|-------------
 Manual access via folder | Access password-protected folder with credentials obtained, Analyse contents | Uncover instructions to access the WebDav Corporate Server and user Ryans Hash
 
-![Connect Corp Server](/Images/CorpSever.png)
+![Connect Corp Server](Images/CorpSever.png)
 
 #### Password Crack - Weak Encoding for Password
 Tools | Processes | Achievements
 ------|-----------|-------------
 [Crackstation](https://crackstation.net/) | Copy retrieved hash into CrackStation | Successfully obtained user Ryans Hash to login into Corporate Server 
 
-![Crackstation](/Images/Crackstation.png)
+![Crackstation](Images/Crackstation.png)
 
 #### Upload PHP to WebDav - Unrestricted Upload of File
 Tools | Processes | Achievements
 ------|-----------|-------------
 [Cadaver](http://www.webdav.org/cadaver/) |  We use cavader the CLI for webdav to login| Successful login with user Ryans credentials, Upload of PHP file
 
-![Cadaver](/Images/Cadaver.png)
-![Cadaver Command](/Images/CadaverCommand.png)
-![WebDav](/Images/WebDav.png)
+![Cadaver](Images/Cadaver.png)
+![Cadaver Command](Images/CadaverCommand.png)
+![WebDav](Images/WebDav.png)
 
 #### Remote Code Execution
 Tools | Processes | Achievements
@@ -172,49 +172,49 @@ Command Line | Command: `find . -iname flag.txt` | Search and retrieve the Flag
 
 *Port Scan occurred Nov 15*
 
-![Port Scan Kibana]
+![Port Scan Kibana](Images/PortScanKibana.png)
 
 *143,984 Packets sent from the IP address 192.168.1.90* 
 
-![Port Scan Kibana]
+![Port Scan Kibana1](Images/PortScanKibana1.png)
 
 ### Identifying the Port Scan
 
 *401 Victim Responses* 
 
-![Responses]
+![Responses](Images/Responses.png)
 
 *NMAP Observed*
 
-![Kibana NMAP]
+![Kibana NMAP](Images/KibanaNMAP.png)
 
 ### Finding the Request for the Hidden Directory
 
 *The requests for the Hidden Directory occurred Nov 15, 15 354 requests were made*
 
-![Hidden Directory]
+![Hidden Directory](Images/HiddenDirectory.png)
 
 *Company Folders Secret Folder was requested*
 
-![Folder Request]
+![Folder Request](Images/FolderRequest.png)
 
 ### Uncovering the Brute Force Attack
 
 *15,451 requests were made in the attack before the password was discovered*
 
-![Brute Force Attack]
+![Brute Force Attack](Images/BruteForceAttack.png)
 
 ### Finding the WebDav Connection and Identify the Reverse Shell
 
 *We see the WebDav connection and the PUT request to upload the payload to target*
 
-![WebDav PUT Request]
+![WebDav PUT Request](Images/WebDavShell.png)
 
 ### Identify the Reverse Shell and Meterpreter Traffic
 
 *We filter and analyse Ports and see the reverse shell*
 
-![Port 4444]
+![Port 4444](Images/Port4444.png)
 
 ## Blue Team Proposed Alarms and Mitigation Strategies
 
