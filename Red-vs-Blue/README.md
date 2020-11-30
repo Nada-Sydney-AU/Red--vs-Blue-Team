@@ -46,10 +46,7 @@ The Blue Team proposes mitigations Strategies to create alarms and harden the sy
 
 ## Network Topology
 Below is the network topology of the project, inclusive of the Kali attacking machine, the ELK server, and the victim server
-<<<<<<< HEAD
-=======
 
->>>>>>> 4a921e081c29c398aa17b15aac8a509d960f5fb1
 ![Network Diagram](Images/NetworkDiagram.png)
 
 #### Network Red Team vs Blue Team Subnet
@@ -163,12 +160,11 @@ Msfvenom | Command-line instance of Metasploit we use to generate and output the
 Metasploit | Start listener and deliver payload | Performed successful reverse attack and gained shell and root access
 Command Line | Command: `find . -iname flag.txt` | Search and retrieve the Flag
 
-![Msfvenom](/Images/Msfvenom.png)
-![Metasploit](/Images/Metasploit.png)
-<<<<<<< HEAD
-![Flag](/Images/Flag.png)
-=======
-![Flag](/Images/Flag.png)
+![Msfvenom](Images/Msfvenom.png)
+
+![Metasploit](Images/Metasploit.png)
+
+![Flag](Images/Flag.png)
 
 ## Blue Team Log Analysis and Attack Characterisation
 
@@ -258,4 +254,3 @@ Command Line | Command: `find . -iname flag.txt` | Search and retrieve the Flag
    - Ban PHP extension
    - Block Ports 4444
 
->>>>>>> 4a921e081c29c398aa17b15aac8a509d960f5fb1
