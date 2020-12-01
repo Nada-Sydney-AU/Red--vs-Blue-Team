@@ -118,7 +118,7 @@ Tools | Processes | Achievements
 #### Sensitive Data Exposure - Exposure of Sensitive Information to an Unauthorised Actor
 Tools | Processes | Achievements
 ------|-----------|-------------
-Open HTTP Port 80 | We access the insecure Apache HTTP website 192.168.1.105 | Navigating through the directories we find information relating to the company_secret_folder
+Open HTTP Port 80 | We access the insecure Apache HTTP website 192.168.1.105 | Navigating through the directories we find information relating to the company_folders/secret_folder
 
 ![MozillaFirefox](Red-vs-Blue/Images/MozillaFirefox.png)
 
